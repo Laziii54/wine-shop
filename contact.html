@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <header class="mind-header">Contact</header>
+
+    <section>
+        <div class="inside">
+            <a href="index.html" class="menu-item">
+                <img src="icon.png" class="icon">
+                <p class="label">Home</p>
+            </a>
+            <a href="about.html" class="menu-item">
+                <img src="about.png" class="about">
+                <p class="label">About Us</p>
+            </a>
+            <a href="contact.html" class="menu-item">
+                <span class="emoji">📞</span>
+                <p class="label">Contact</p>
+            </a>
+        </div>
+    </section>
+
+    <div class="contact-container-first"> 
+        <div class="info-columns">
+            <div class="info-box left-box" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <h3>Contact</h3>
+                <p>Wine store</p>
+            </div>
+            <div class="info-box right-box" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <h3>Number,Email</h3>
+                <p>Tel: 599 17 87 30<br>
+                Email: zukalazashvili1999@gmail.com</p>
+            </div>
+        </div>
+        <div class="contact-form-first" data-aos="zoom-in-up" data-aos-delay="10" data-aos-duration="2200">
+            <h3>Contact us</h3>
+            <form id="contactForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                <div class="error-message" id="nameError"></div>
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+                <div class="error-message" id="emailError"></div>
+
+                <label for="message">Massage</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+                <div class="error-message" id="messageError"></div>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <div class="map" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1500">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093745!2d144.95373531590482!3d-37.81720974202185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d3c9f0f0f0f0!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1632939220553!5m2!1sen!2sau" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Wine Shop</h3>
+                <p>Your go-to place for premium wines. Explore our wide selection and enjoy the taste of excellence.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>📍 123 Wine Street, Tbilisi</p>
+                <p>📞 +995 599 17 87 30</p>
+                <p>✉️ info@wineshop.ge</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Wine Shop | All Rights Reserved.
+        </div>
+      </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+        
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('messageError').textContent = '';
+        
+            let isValid = true;
+        
+            const name = document.getElementById('name').value.trim();
+            if (!name) {
+                document.getElementById('nameError').textContent = 'This is required';
+                isValid = false;
+            }
+        
+            const email = document.getElementById('email').value.trim();
+            if (!email) {
+                document.getElementById('emailError').textContent = 'This is required';
+                isValid = false;
+            } else if (!email.includes('@')) {
+            document.getElementById('emailError').textContent = 'Please include "@" in the email';
+                isValid = false;
+            }
+        
+            const message = document.getElementById('message').value.trim();
+            if (!message) {
+                document.getElementById('messageError').textContent = 'This is required';
+                isValid = false;
+            }
+        
+            if (isValid) {
+                alert('გმადლობთ, ფორმა წარმატებით გაიგზავნა!');
+            }
+        });
+    </script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
